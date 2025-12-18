@@ -7,15 +7,18 @@ Generate a profiling report for a csv file
 uv venv -p 3.11
 uv pip install -r requirements.txt
 uv run install streamlit
-uv run python -m csv_profiler.cli data/sample.csv --out-dir outputs
+
 
 ##run CLI 
 # If you have a src? folder:
 #Mac/Linux: export PYTHONPATH=src
-#Windows: $env: PYTHONPATH="src"
-uv run python -m csv_profiler.cli profile data/sample.csv --out-dir outputs
+#Windows:  $env:PYTHONPATH="src"
+uv run python -m csv_profiler.cli data/sample.csv --out-dir outputs
+
 ##Run GUI
 # if you have a src/ folder:
+##windows: $env:PYTHONPATH="src"
+ uv run streamlit run src/csv_profiler/app.py
 # output files 
 the cli writes:
 output/report.JSON
@@ -25,4 +28,7 @@ also the streamlit app can:
 -preview the report
 -download GSON + Markdown
 
-![streamlit UI](images/ui.png)
+![streamlit UI](images/app_preview.png)
+![streamlit UI](images/app_preview1.png)
+![streamlit UI](images/app_preview3.png)
+![streamlit UI](images/app_preview4.png)
